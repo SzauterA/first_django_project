@@ -1,0 +1,22 @@
+{% include 'shopping/header.html' with title='Products'%}
+
+
+
+<form method="get">
+    <table>
+    {{form.as_p}}
+    </table>
+    <input type="submit" value="Search">
+</form>
+
+{% if products %}
+    <ul>
+    {% for product in products %}
+        <li>{{ product.name }}
+            <a href="products/{{product.id}}">({{product.id}})</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No products found.</p>
+{% endif %}
+

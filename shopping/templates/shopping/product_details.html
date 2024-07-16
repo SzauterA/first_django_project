@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{product.name}}</title>
+</head>
+<body>
+{% include 'shopping/header.html' with title='Product details'%}
+<!-- <p><a href="{% url 'products' %}">Products</a></p> -->
+<h1>{{product.name|title}}</h1>
+<a href="{% url 'product_update' product_id=product.id %}">Update details</a>
+<ul>
+    <li>Price: {{product.price}}</li>
+    <li>Expiry date: {{product.expiry_date}}</li>
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+    {% else %}
+        <p>No image</p>
+    {% endif %}
+</ul>
+
+</body>
+</html>

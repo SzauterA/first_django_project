@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+<!-- <p><a href="{% url 'customers' %}">Customers</a></p> -->
+{% include 'shopping/header.html' with title='Customer details'%}
+
+{{customer.first_name}} {{customer.last_name}} {{customer.id}}
+<ul>
+    <li>Age: {{customer.age}}</li>
+    {% if customer.email %}
+        <li>Email: {{customer.email}}</li>
+    {% else %}
+        <li>Email: -</li>
+    {% endif %}
+    <li>Phone: {{customer.phone_number}}</li>
+</ul>
+
+</body>

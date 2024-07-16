@@ -1,0 +1,30 @@
+{% include 'shopping/header.html' with title='Customers' %}
+
+{% if title %}
+    <h1>{{title}}</h1>
+{% endif %}
+<form method="get">
+    <table>
+    {{form.as_p}}
+    </table>
+    <!--
+        <input type="text" name="first_name" placeholder="Search by first name">
+        <input type="text" name="last_name" placeholder="Search by last name">
+        <input type="text" name="email" placeholder="Search by email">
+    -->
+    <input type="submit" value="Search">
+</form>
+
+
+{% if customers %}
+    <ul>
+    {% for customer in customers %}
+        <li>{{ customer.first_name }} {{customer.last_name}} 
+            <a href="customers/{{customer.id}}">({{customer.id}})</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No customers found.</p>
+{% endif %}
+
+<a href="{% url 'customer_add' %}">Add new</a>

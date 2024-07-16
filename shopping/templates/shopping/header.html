@@ -1,0 +1,16 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'images/icons/style.css' %}">
+</head>
+
+
+<!-- <p><a href="{% url 'customers' %}">Customers</a></p> -->
+<div>
+    <a href="{% url 'index' %}"><img class='icon' src="{% static 'images/icons/home.png' %}" alt="Home button" ></a>
+    <a href="{% url 'customers' %}"><img class='icon' src="{% static 'images/icons/customers.png' %}" alt="Customers button" ></a>
+    <a href="{% url 'products' %}"><img class='icon' src="{% static 'images/icons/products.png' %}" alt="Products button"></a>
+    <!-- <a href="{% url 'customers' %}">Customers</a> -->
+    <!-- <a href="{% url 'products' %}">Products</a> -->
+</div>
+
+<h1>{{ title }}</h1>
